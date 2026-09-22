@@ -46,10 +46,9 @@ u/u⁺ = 1/κ ln(z/z₀)
 ```
 """
 function logprofilefit(z,u, κ=0.4)
-    x = log.(z)
-    a₁,a₂ = linfitcoefs(x, u)
-    u⁺ = a₁ * κ
-    z₀ = exp(-a₀/a₁)
+    a₁,a₂ = logfitcoefs(z, u)
+    u⁺ = a₂ * κ
+    z₀ = exp(-a₁/a₂)
     return z₀, u⁺
 end
 
