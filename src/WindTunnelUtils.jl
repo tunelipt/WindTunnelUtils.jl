@@ -1,5 +1,5 @@
 module WindTunnelUtils
 
-# Write your package code here.
+include("fit.jl")
 
 end
