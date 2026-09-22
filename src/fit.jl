@@ -1,6 +1,5 @@
 
 export linfitcoefs, powerfitcoefs, logfitcoefs
-export logprofilefit, powerprofilefit
 
 
 "Fits a straight line through a set of points, `y = a₁ + a₂ * x`"
@@ -36,32 +35,3 @@ function powerfitcoefs(x, y)
     (exp(a₁), a₂)
 end
 
-"""
-`logprofilefit(z,u,κ)`
-`logprofilefit(z,u)`
-
-Fits the law of the wall to a velocity profile given the Von Karman coefficient `κ`:
-```math
-u/u⁺ = 1/κ ln(z/z₀)
-```
-"""
-function logprofilefit(z,u, κ=0.4)
-    a₁,a₂ = logfitcoefs(z, u)
-    u⁺ = a₂ * κ
-    z₀ = exp(-a₁/a₂)
-    return z₀, u⁺
-end
-
-
-"""
-`powerprofilefit(z,u,zref=1.0)`
-`powerprofilefit(z,u)`
-
-Fits a power law to a velocity profile:
-```math
-u = uref(z/zref)ᵖ
-```
-"""
-function powerprofilefit(z, u, zref=1.0)
-    uref, p = powerfitcoefs(z./zref, u)
-end
