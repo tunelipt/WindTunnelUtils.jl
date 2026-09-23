@@ -1,6 +1,6 @@
 name = "WindTunnelUtils"
 uuid = "cbf68fe3-1bb0-47a2-b301-24afd92eee08"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["= <pjabardo@ipt.br> and contributors"]
 
 [deps]
@@ -9,6 +9,8 @@ BonitoWidgets = "62a4b9e4-7ee6-4bfa-b661-80bcb0a47665"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+Observables = "510215fc-4207-5dde-b226-833fc4488ee2"
+TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
 
@@ -18,6 +20,8 @@ BonitoWidgets = "0.1.2"
 CairoMakie = "0.15.15"
 GLMakie = "0.13.15"
 Makie = "0.24.15"
+Observables = "0.5.5"
+TOML = "1.0.3"
 Unitful = "1.29.0"
 WGLMakie = "0.13.15"
 julia = "1.10"
