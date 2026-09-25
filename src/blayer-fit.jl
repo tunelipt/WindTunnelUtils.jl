@@ -133,17 +133,20 @@ function interactive_profile(fig, z, u, make_profile, labelfun;
     return fit
 end
 
-function i_logprofile(fig, z, u; kappa=0.4, d=0.0, heights=[], snap=true)
+function i_logprofile(fig, z, u; kappa=0.4, d=0.0, heights=[], snap=true,
+                      zscale=log10, uscale=identity)
     interactive_profile(fig, z, u, (z,u)->LogProfile(z,u; kappa=kappa, d=d),
                         p->"z₀ = $(round(Int, 1000*p.z0)) mm";
-                        uscale=identity, zscale=log10, heights=heights,
+                        uscale=uscale, zscale=zscale, heights=heights,
                         snap=snap)
 end
 
-function i_powerprofile(fig, z, u; zref=10.0, d=0.0, heights=[], snap=true)
+function i_powerprofile(fig, z, u; zref=10.0, d=0.0, heights=[], snap=true,
+                        zscale=log10, uscale=log10)
+    
     interactive_profile(fig, z, u, (z,u)->PowerProfile(z,u; zref=zref, d=d),
                         p->"p = $(round(p.p, digits=2))";
-                        uscale=log10, zscale=log10, snap=snap)
+                        uscale=uscale, zscale=uscale, snap=snap)
 end
 
 

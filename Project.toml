@@ -1,6 +1,6 @@
 name = "WindTunnelUtils"
 uuid = "cbf68fe3-1bb0-47a2-b301-24afd92eee08"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["= <pjabardo@ipt.br> and contributors"]
 
 [deps]
