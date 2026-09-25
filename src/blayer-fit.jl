@@ -146,7 +146,16 @@ function i_powerprofile(fig, z, u; zref=10.0, d=0.0, heights=[], snap=true,
     
     interactive_profile(fig, z, u, (z,u)->PowerProfile(z,u; zref=zref, d=d),
                         p->"p = $(round(p.p, digits=2))";
-                        uscale=uscale, zscale=uscale, snap=snap)
+                        uscale=uscale, zscale=uscale, snap=snap, heights=heights)
+end
+
+
+function i_fpprofile(fig, z, u; zref=10.0, d=0.0, snap=true,
+                        zscale=log10, uscale=log10)
+    
+    interactive_profile(fig, z, u, (z,u)->PowerProfile(z,u; zref=1.0, d=d),
+                        p->"fₚ = $(round(p(zref), digits=3))";
+                        uscale=uscale, zscale=uscale, snap=snap, heights=[zref])
 end
 
 
